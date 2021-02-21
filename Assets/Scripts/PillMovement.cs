@@ -9,6 +9,10 @@ public class PillMovement : MonoBehaviour
 
     public float pillspeed = 5f;
 
+    public float tempSpeed = 0;
+
+    public float normSpeed = 5f;
+
     public PlayerController pc; 
     
 
@@ -24,12 +28,19 @@ public class PillMovement : MonoBehaviour
     void Update()
     {
 
+        if(pc.gameOver == false && pc.pause == false){ 
+
+            pillspeed = normSpeed;
+
         destroyPill();
+
+
+        }
 
         transform.Translate(Vector3.back * pillspeed *Time.deltaTime);
 
-        if(pc.gameOver == true){
-            pillspeed = 0;
+        if(pc.gameOver == true || pc.pause == true){
+            pillspeed = tempSpeed;
         }
 
 
@@ -50,11 +61,19 @@ public class PillMovement : MonoBehaviour
 
         if(pc.timedGameOver == false){
 
-
         while(seconds > 0){
 
+            if(pc.pause == false){
+
+
             yield return new WaitForSeconds(1);
-            seconds--;
+            seconds--; }
+
+            else{
+                yield return null;
+            }
+
+            }
 
             
         }
@@ -63,5 +82,5 @@ public class PillMovement : MonoBehaviour
         }
 
 
-    }
+    
 }

@@ -11,7 +11,11 @@ public class EnemyScript : MonoBehaviour
     // Start is called before the first frame update
 
     private GameObject brain;
-    public float speed = 3f;
+    public float speed;
+
+    public float normSpeed = 3f;
+
+    public float tempSpeed = 0;
     private float enemyBound = -5;
     public GameObject player;
     public PlayerController pc;
@@ -37,14 +41,20 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(pc.gameOver == false && pc.pause == false){
+
+        speed = normSpeed;
        
         transform.Translate(Vector3.back * speed * Time.deltaTime); 
         destoyEnemy();
 
         UpdateSpeed();
 
-        if(pc.gameOver == true){
-            speed = 0;
+        }
+
+        if(pc.gameOver == true || pc.pause == true){
+            speed = tempSpeed;
         } 
 
         
@@ -69,7 +79,7 @@ public class EnemyScript : MonoBehaviour
 
         if(score >= referenceNumber){
 
-            speed *= 1.2f;
+            normSpeed *= 1.2f;
 
             referenceNumber += 10;
             

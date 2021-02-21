@@ -25,7 +25,7 @@ public class BackgroundScript : MonoBehaviour
     void Update()
     {
 
-        if(pc.gameOver == false){
+        if(pc.gameOver == false && pc.pause == false){
 
         transform.Translate(Vector3.back * backgroundSpeed * Time.deltaTime);
 

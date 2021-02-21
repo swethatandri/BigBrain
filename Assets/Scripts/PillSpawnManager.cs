@@ -29,7 +29,7 @@ public class PillSpawnManager : MonoBehaviour
 
     void generatePrefab(){
 
-        if(pc.gameOver == false){
+        if(pc.gameOver == false && pc.pause == false){
 
         int index = Random.Range(0, pillPrefabs.Length);
         Vector3 pillLocation = new Vector3(Random.Range(-10f, 10f), 0.5f, Random.Range(0,5f));
@@ -38,7 +38,7 @@ public class PillSpawnManager : MonoBehaviour
 
         }
 
-        if(pc.timedGameOver == false){
+        if(pc.timedGameOver == false && pc.pause == false){
 
         int index = Random.Range(0, pillPrefabs.Length -1);
         Vector3 pillLocation = new Vector3(Random.Range(-10f, 10f), 0.5f, Random.Range(0,5f));
@@ -52,7 +52,7 @@ public class PillSpawnManager : MonoBehaviour
 
     void powerupSpawn(){
 
-        if(pc.timedGameOver == false){
+        if(pc.timedGameOver == false && pc.pause == false){
 
             int index = pillPrefabs.Length -1;
            Vector3 pillLocation = new Vector3(Random.Range(-10f, 10f), 0.5f, Random.Range(0,5f));

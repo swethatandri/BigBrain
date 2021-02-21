@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
 
     public bool timedGameOver;
 
+    public bool pause;
+
     public Button restartButton;
 
     public Button playButton;
@@ -60,6 +62,10 @@ public class PlayerController : MonoBehaviour
     public Button instructionsButton;
 
     public Button homeButton;
+
+    public Button pauseButton;
+
+    public Button unpauseButton;
 
 
 
@@ -77,6 +83,8 @@ public class PlayerController : MonoBehaviour
     void Update()
 
     {
+
+        if((gameOver == false || timedGameOver == false) && pause == false){
         
         checkBounds();
 
@@ -100,6 +108,12 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKey(KeyCode.DownArrow)){
             transform.Translate(Vector3.back * Time.deltaTime * (directionSpeed));
         }
+
+        }
+
+        
+
+
 
     
     }
@@ -276,6 +290,8 @@ public class PlayerController : MonoBehaviour
 
         cameraAudio.Stop();
 
+        pause = false;
+
         cameraAudio.loop = true;
         cameraAudio.clip = infiniteMode;
         cameraAudio.Play();
@@ -288,6 +304,8 @@ public class PlayerController : MonoBehaviour
         scoretext.gameObject.SetActive(true);
         instructionsText.gameObject.SetActive(false);
         instructionsButton.gameObject.SetActive(false);
+        pauseButton.gameObject.SetActive(true);
+        unpauseButton.gameObject.SetActive(true);
         score = 0;
         scoretext.text = "Brainpower: " + score;
 
@@ -297,6 +315,7 @@ public class PlayerController : MonoBehaviour
 
     public void StartTimedGame(){
         timedGameOver = false;
+        pause = false;
         titletext.gameObject.SetActive(false);
         playButton.gameObject.SetActive(false);
         timedButton.gameObject.SetActive(false);
@@ -304,6 +323,9 @@ public class PlayerController : MonoBehaviour
         timetext.gameObject.SetActive(true);
         scoretext.gameObject.SetActive(true);
         instructionsText.gameObject.SetActive(false);
+        pauseButton.gameObject.SetActive(true);
+        unpauseButton.gameObject.SetActive(true);
+
 
         directionSpeed = 7f;
 
@@ -347,14 +369,40 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void PauseButton(){
+
+        pause = true;
+        
+    }
+    
+
+    public void UnpauseButton(){
+        pause = false;
+        
+    }
+
 
     public IEnumerator StartCountdown(int countdownValue){
 
         while(countdownValue >= 0){
+
             timeLeft = countdownValue;
+
+            if(pause == false){
+
             timetext.text = "Time Left: " + countdownValue;
             yield return new WaitForSeconds(1);
             countdownValue = countdownValue -1 ;
+
+            }
+
+            if(pause == true){
+
+                yield return null;
+            }
+
+            
+            
             
         }
 
@@ -370,8 +418,9 @@ public class PlayerController : MonoBehaviour
 
             plusScore.gameObject.SetActive(true);
             plusScore.text = "+" + score;
+            if(pause == false){
             yield return new WaitForSeconds(seconds);
-            seconds--;
+            seconds--;}
         }
 
         plusScore.gameObject.SetActive(false);
@@ -383,9 +432,17 @@ public class PlayerController : MonoBehaviour
 
 
         while(duration >= 0){
+
+            bool isPaused = pause;
+
+            if(isPaused == true){
+                yield return null;
+            }
+            if(isPaused == false){
             yield return new WaitForSeconds(1);
             timetext.text = "Time Remaining: " + duration;
             duration = duration - 1 ;
+            }
 
         }
 

@@ -52,7 +52,7 @@ public class SpawnManager : MonoBehaviour
 
     void spawnRandomEnemy(){
 
-        if(pc.gameOver == false){
+        if(pc.gameOver == false && pc.pause == false){
 
         int enemyIndex = Random.Range(0, obstaclePrefabs.Length);
         float enemyY = -0.49f;
@@ -65,7 +65,7 @@ public class SpawnManager : MonoBehaviour
 
         }
 
-        if(pc.timedGameOver == false){
+        if(pc.timedGameOver == false && pc.pause == false){
 
             CancelInvoke("spawnRandomEnemy");
             
