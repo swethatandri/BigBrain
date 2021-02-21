@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,7 +32,7 @@ public class PillMovement : MonoBehaviour
 
             pillspeed = normSpeed;
 
-        destroyPill();
+            destroyPill();
 
 
         }
@@ -59,9 +59,11 @@ public class PillMovement : MonoBehaviour
 
     IEnumerator pillTime(int seconds = 4){
 
+  
+
         if(pc.timedGameOver == false){
 
-        while(seconds > 0){
+          while(seconds > 0){
 
             if(pc.pause == false){
 
@@ -75,10 +77,12 @@ public class PillMovement : MonoBehaviour
 
             }
 
+            Destroy(gameObject);
+
             
         }
 
-        Destroy(gameObject);
+        
         }
 
 
