@@ -1111,7 +1111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -340, y: 180}
+  m_AnchoredPosition: {x: -360, y: 230}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &598780161
@@ -1133,19 +1133,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\nYou are a brain on a quest to consume the top secret formula to increase
-    brain power from the factory that produced it. Your goal is \nto collect as many
-    yellow formula particles as possible to increase your power while avoiding the
+    brain power from \nthe factory that produced it. Your goal is  to collect as many
+    yellow formula particles as possible \nto increase your power while avoiding the
     green acid spills at all costs.\n\nInfinite Mode: Use the arrow keys to move the
-    brain left, right, up and down in an endless runner. Collect yellow particles
-    to increase \nyour score as much as possible. The game ends when you come in contact
-    with green acid. Collecting a black bomb will decrease\nyour score, and collecting
-    a pink pill will give you temporary invincibility against the acid for 10 seconds.
+    brain left, right, up and down in an endless runner. \nCollect yellow particles
+    to increase your score as much as possible. The game ends when you come \nin contact
+    with green acid. Collecting a black bomb will decrease your score, and collecting
+    a pink pill \nwill give you temporary invincibility against the acid for 10 seconds.
     \n\nTimed Mode: Use the arrow keys to move the brain left, right, up and down
-    in a fixed space with 60 seconds on the clock. Collect\nyellow particles to increase
-    your score as much as possible. The game ends when you come in contact with green
-    acid or your time \nruns out. Every 15 points, your arena will reset with enemies
-    in new locations. Collecting a black bomb will decrease your score, and \ncollecting
-    a pink pill will give you 5 seconds extra time. \n \n\n\n\n"
+    in a fixed space with 60 \nseconds on the clock. Collect yellow particles to increase
+    your score as much as possible. The game \nends when you come in contact with
+    green acid or your time runs out. Every 15 points, your arena \nwill reset with
+    enemies in new locations. Collecting a black bomb will decrease your score, and
+    \ncollecting a pink pill will give you 5 seconds extra time. \n \n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff9dfb9dcfa9b451da0749c3d2b449a9, type: 2}
   m_sharedMaterial: {fileID: 21956123629259200, guid: ff9dfb9dcfa9b451da0749c3d2b449a9,
@@ -1174,8 +1174,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 135
+  m_firstOverflowCharacterIndex: 92
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1215,12 +1215,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 598780161}
-    characterCount: 1100
+    characterCount: 1105
     spriteCount: 0
-    spaceCount: 211
-    wordCount: 198
+    spaceCount: 216
+    wordCount: 197
     linkCount: 0
-    lineCount: 16
+    lineCount: 19
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

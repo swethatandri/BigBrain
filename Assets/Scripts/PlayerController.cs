@@ -361,13 +361,13 @@ public class PlayerController : MonoBehaviour
 
     public void HomeButton(){
 
-        titletext.gameObject.SetActive(true);
-        playButton.gameObject.SetActive(true);
-        timedButton.gameObject.SetActive(true);
-        instructionsButton.gameObject.SetActive(true);
-        gameObject.SetActive(true);
-        instructionsText.gameObject.SetActive(false);
-        homeButton.gameObject.SetActive(false);
+        
+
+        RestartGame();
+
+        
+        
+        
 
 
     }
@@ -376,7 +376,6 @@ public class PlayerController : MonoBehaviour
 
         pause = true;
         homeButton.gameObject.SetActive(true);
-        
         
     }
     
