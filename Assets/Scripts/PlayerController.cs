@@ -375,12 +375,15 @@ public class PlayerController : MonoBehaviour
     public void PauseButton(){
 
         pause = true;
+        homeButton.gameObject.SetActive(true);
+        
         
     }
     
 
     public void UnpauseButton(){
         pause = false;
+        homeButton.gameObject.SetActive(false);
         
     }
 
