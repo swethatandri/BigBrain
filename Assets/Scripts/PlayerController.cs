@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     public TextMeshProUGUI plusScore;
 
+    public TextMeshProUGUI credits;
+
 
 
     public bool hasPowerUp = false;
@@ -309,6 +311,7 @@ public class PlayerController : MonoBehaviour
         instructionsButton.gameObject.SetActive(false);
         pauseButton.gameObject.SetActive(true);
         unpauseButton.gameObject.SetActive(true);
+        credits.gameObject.SetActive(false);
         score = 0;
         scoretext.text = "Brainpower: " + score;
 
@@ -328,6 +331,7 @@ public class PlayerController : MonoBehaviour
         instructionsText.gameObject.SetActive(false);
         pauseButton.gameObject.SetActive(true);
         unpauseButton.gameObject.SetActive(true);
+        credits.gameObject.SetActive(false);
 
 
         directionSpeed = 7f;
@@ -355,6 +359,7 @@ public class PlayerController : MonoBehaviour
         timedButton.gameObject.SetActive(false);
         instructionsButton.gameObject.SetActive(false);
         gameObject.SetActive(false);
+        credits.gameObject.SetActive(false);
     
         
     }
